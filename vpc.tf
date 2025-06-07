@@ -1,6 +1,7 @@
 provider "google" {
-  project = "gke-project-462018" 
-  region  = "us-central1"
+  credentials = file(var.credentials_file)
+  project = var.project_id 
+  region  = var.region
 }
 
 resource "google_compute_network" "vpc_network" {
